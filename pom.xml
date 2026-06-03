@@ -2,7 +2,42 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
-    <artifactId>calculator</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com.example</groupId>        <!-- your organization -->
+    <artifactId>calculator</artifactId>   <!-- project name -->
+    <version>1.0-SNAPSHOT</version>       <!-- current version -->
+
+    <!--
+        Maven build commands:
+        mvn compile       — does it build? (phases 1-7)
+        mvn test          — do tests pass? (phases 1-15)
+        mvn package       — create the deliverable (phases 1-17)
+        mvn clean package — fresh build from scratch
+        mvn clean install   — build + local repository (phases 1-22)
+        mvn dependency:tree — show all dependencies (read-only, changes nothing)
+
+        Maven Build Lifecycle (23 phases):
+         1  validate                Check project is correct & all info available
+         2  initialize              Set up build state (properties, directories)
+         3  generate-sources        Generate source code (e.g. from WSDL/XSD)
+         4  process-sources         Filter/process source code
+         5  generate-resources      Generate resources for packaging
+         6  process-resources       Copy resources to target/classes
+         7  compile                 Compile src/main/java → target/classes
+         8  process-classes         Post-process .class files (e.g. bytecode enhancement)
+         9  generate-test-sources   Generate test source code
+        10  process-test-sources    Filter/process test source code
+        11  generate-test-resources Generate test resources
+        12  process-test-resources  Copy test resources to target/test-classes
+        13  test-compile            Compile src/test/java → target/test-classes
+        14  process-test-classes    Post-process test .class files
+        15  test                    Run unit tests (fails → build stops)
+        16  prepare-package         Final preparation before packaging
+        17  package                 Create .jar or .war in target/
+        18  pre-integration-test    Set up integration test environment
+        19  integration-test        Run integration tests
+        20  post-integration-test   Tear down integration test environment
+        21  verify                  Run quality checks (CheckStyle, PMD, SpotBugs)
+        22  install                 Copy .jar to local ~/.m2/ repository
+        23  deploy                  Upload to remote repository (Nexus)
+    -->
 </project>
