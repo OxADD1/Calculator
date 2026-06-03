@@ -16,13 +16,15 @@
     </dependencies>
 
     <!--
-        Maven build commands:
-        mvn compile       — does it build? (phases 1-7)
-        mvn test          — do tests pass? (phases 1-15)
-        mvn package       — create the deliverable (phases 1-17)
-        mvn clean package — fresh build from scratch
-        mvn clean install   — build + local repository (phases 1-22)
-        mvn dependency:tree — show all dependencies (read-only, changes nothing)
+        Maven build commands (Exercise 2.3: Read vs Write classification):
+        mvn compile         — does it build? (phases 1-7)              [Write local]
+        mvn test            — do tests pass? (phases 1-15)             [Write local]
+        mvn package         — create the deliverable (phases 1-17)     [Write local]
+        mvn clean           — delete target/ directory                 [Write local]
+        mvn clean package   — fresh build from scratch                 [Write local]
+        mvn clean install   — build + local repository (phases 1-22)   [Write local]
+        mvn deploy          — upload to remote repository (phases 1-23)[Write external]
+        mvn dependency:tree — show all dependencies                    [Read]
 
         Maven Build Lifecycle (23 phases):
          1  validate                Check project is correct & all info available
