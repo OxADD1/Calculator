@@ -2,7 +2,7 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
-    <artifactId>calculator</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com.example</groupId>        <!-- Organisation/Firma -->
+    <artifactId>calculator</artifactId>   <!-- Projektname -->
+    <version>1.0-SNAPSHOT</version>       <!-- aktuelle Version -->
 </project>
