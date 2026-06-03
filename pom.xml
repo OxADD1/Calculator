@@ -12,7 +12,8 @@
         mvn test          — do tests pass? (phases 1-15)
         mvn package       — create the deliverable (phases 1-17)
         mvn clean package — fresh build from scratch
-        mvn clean install — build + local repository (phases 1-22)
+        mvn clean install   — build + local repository (phases 1-22)
+        mvn dependency:tree — show all dependencies (read-only, changes nothing)
 
         Maven Build Lifecycle (23 phases):
          1  validate                Check project is correct & all info available
