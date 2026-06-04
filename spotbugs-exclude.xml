@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <!-- Gson sets Operation fields via reflection, SpotBugs can't see that -->
+    <Match>
+        <Bug pattern="UWF_UNWRITTEN_FIELD,NP_UNWRITTEN_FIELD"/>
+        <Class name="~com\.example\..*"/>
+    </Match>
+</FindBugsFilter>
