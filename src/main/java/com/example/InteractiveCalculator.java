@@ -1,5 +1,11 @@
 package com.example;
 
+// Vibe Coding Experiment (slide 78):
+// This class was AI-generated without constraints (no CLAUDE.md, no rules).
+// Check command: mvn checkstyle:check pmd:check spotbugs:check
+// Result: 1 PMD violation found — "UselessParentheses" in ScientificCalculator.percentage().
+// Fix: removed unnecessary parentheses around (value / total) → value / total * 100.0
+
 import java.util.List;
 import java.util.Scanner;
 import org.slf4j.Logger;
