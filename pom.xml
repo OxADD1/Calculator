@@ -17,7 +17,8 @@
 
     <build>
         <plugins>
-            <!-- CheckStyle: enforces Google Java Style Guide -->
+            <!-- CheckStyle: checks formatting, naming, structure (like a grammar checker)
+                 Run with: mvn checkstyle:check -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
@@ -28,7 +29,8 @@
                     <failOnViolation>true</failOnViolation>
                 </configuration>
             </plugin>
-            <!-- PMD: detects bad patterns and code smells -->
+            <!-- PMD: checks bad patterns, dead code, complexity (like a writing style advisor)
+                 Run with: mvn pmd:check -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
@@ -37,7 +39,8 @@
                     <failOnViolation>true</failOnViolation>
                 </configuration>
             </plugin>
-            <!-- SpotBugs: finds real bugs in compiled bytecode -->
+            <!-- SpotBugs: checks actual bugs, null pointers, resource leaks in bytecode (like a bug detector)
+                 Run with: mvn spotbugs:check -->
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
@@ -48,6 +51,7 @@
             </plugin>
         </plugins>
     </build>
+    <!-- Run all three together: mvn clean compile checkstyle:check pmd:check spotbugs:check -->
 
     <!--
         Maven build commands (Exercise 2.3: Read vs Write classification):
