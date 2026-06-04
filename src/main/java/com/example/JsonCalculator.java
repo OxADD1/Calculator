@@ -4,12 +4,16 @@ import com.google.gson.Gson;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.StandardCharsets;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 // Run with: mvn exec:java -Dexec.mainClass="com.example.JsonCalculator"
 // Reads operations from: src/main/resources/calculation.json
 
 /** Parses calculation operations from JSON and executes them. */
 public class JsonCalculator {
+
+  private static final Logger LOG = LoggerFactory.getLogger(JsonCalculator.class);
 
   /** Reads operations from JSON resource and prints results. */
   public static void main(String[] args) {
@@ -38,12 +42,10 @@ public class JsonCalculator {
           result = calc.divide(op.operandA, op.operandB);
           break;
         default:
-          System.out.println("Unknown operation: " + op.operation);
+          LOG.warn("Unknown operation: {}", op.operation);
           continue;
       }
-      System.out.println(
-          op.operandA + " " + op.operation + " " + op.operandB + " = " + result
-      );
+      LOG.info("{} {} {} = {}", op.operandA, op.operation, op.operandB, result);
     }
   }
 }
