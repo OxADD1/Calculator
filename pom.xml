@@ -6,6 +6,11 @@
     <artifactId>calculator</artifactId>   <!-- project name -->
     <version>1.0-SNAPSHOT</version>       <!-- current version -->
 
+    <properties>
+        <maven.compiler.release>21</maven.compiler.release>  <!-- use Java 21 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
 <dependencies>
         <!-- JSON parsing library by Google -->
         <dependency>
@@ -63,6 +68,18 @@
             </plugin>
         </plugins>
     </build>
+
+    <!-- JXR: generates source cross-references for PMD reports -->
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>3.6.0</version> <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jxr-plugin -->
+            </plugin>
+        </plugins>
+    </reporting>
+
     <!-- Run all three together: mvn clean compile checkstyle:check pmd:check spotbugs:check -->
 
     <!--
