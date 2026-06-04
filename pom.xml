@@ -6,7 +6,7 @@
     <artifactId>calculator</artifactId>   <!-- project name -->
     <version>1.0-SNAPSHOT</version>       <!-- current version -->
 
-    <dependencies>
+<dependencies>
         <!-- JSON parsing library by Google -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -14,6 +14,44 @@
             <version>2.13.2</version> <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- CheckStyle: checks formatting, naming, structure (like a grammar checker)
+                 Run with: mvn checkstyle:check -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.6.0</version> <!-- https://search.maven.org/artifact/org.apache.maven.plugins/maven-checkstyle-plugin -->
+                <configuration>
+                    <configLocation>google_checks.xml</configLocation>
+                    <violationSeverity>warning</violationSeverity>
+                    <failOnViolation>true</failOnViolation>
+                </configuration>
+            </plugin>
+            <!-- PMD: checks bad patterns, dead code, complexity (like a writing style advisor)
+                 Run with: mvn pmd:check -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.28.0</version> <!-- https://search.maven.org/artifact/org.apache.maven.plugins/maven-pmd-plugin -->
+                <configuration>
+                    <failOnViolation>true</failOnViolation>
+                </configuration>
+            </plugin>
+            <!-- SpotBugs: checks actual bugs, null pointers, resource leaks in bytecode (like a bug detector)
+                 Run with: mvn spotbugs:check -->
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>4.9.8.3</version> <!-- https://search.maven.org/artifact/com.github.spotbugs/spotbugs-maven-plugin -->
+                <configuration>
+                    <excludeFilterFile>spotbugs-exclude.xml</excludeFilterFile>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <!-- Run all three together: mvn clean compile checkstyle:check pmd:check spotbugs:check -->
 
     <!--
         Maven build commands (Exercise 2.3: Read vs Write classification):

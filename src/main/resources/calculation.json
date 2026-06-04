@@ -1,6 +1,6 @@
 [
-  {"operation": "add", "a": 5, "b": 3},
-  {"operation": "subtract", "a": 10, "b": 4},
-  {"operation": "multiply", "a": 6, "b": 7},
-  {"operation": "divide", "a": 10, "b": 2}
+  {"operation": "add", "operandA": 5, "operandB": 3},
+  {"operation": "subtract", "operandA": 10, "operandB": 4},
+  {"operation": "multiply", "operandA": 6, "operandB": 7},
+  {"operation": "divide", "operandA": 10, "operandB": 2}
 ]
