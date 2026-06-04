@@ -1,5 +1,22 @@
 package com.example;
 
+// === Exercise 3.3: AI vs. Static Analysis — Comparison Table ===
+// Prompt: "Review my Calculator class for quality issues"
+//
+// | Finding                        | Static tools found it? | Claude Code found it? |
+// |--------------------------------|------------------------|-----------------------|
+// | Formatting / style violations  | CheckStyle: yes        | no                    |
+// | Empty catch blocks             | PMD: yes               | yes                   |
+// | String == comparison bug       | SpotBugs: yes          | yes                   |
+// | Design (methods could be static)| no                    | yes                   |
+// | Missing validation (div by 0)  | no                     | yes                   |
+// | Logging (System.out vs SLF4J)  | no                     | no (already fixed)    |
+// | readFile() returns wrong value | no                     | yes                   |
+// | throws Exception too generic   | no                     | yes                   |
+//
+// Key insight: Static tools catch rules. AI catches intent.
+// Neither catches everything alone.
+
 /** Provides basic arithmetic operations. */
 public class Calculator {
   /** Adds two numbers. */
