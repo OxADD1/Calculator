@@ -54,7 +54,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.4</version> <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin/versions -->
                 <configuration>
-                    <argLine>-javaagent:${settings.localRepository}/org/mockito/mockito-core/5.23.0/mockito-core-5.23.0.jar</argLine>
+                    <argLine>@{argLine} -javaagent:${settings.localRepository}/org/mockito/mockito-core/5.23.0/mockito-core-5.23.0.jar</argLine>
                 </configuration>
             </plugin>
             <!-- CheckStyle: checks formatting, naming, structure (like a grammar checker)
@@ -81,6 +81,20 @@
                     </rulesets>
                     <failOnViolation>true</failOnViolation>
                 </configuration>
+            </plugin>
+            <!-- JaCoCo: measures test coverage — which lines and branches are executed during tests
+                 Run with: mvn test jacoco:report → open target/site/jacoco/index.html -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.14</version> <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <!-- SpotBugs: checks actual bugs, null pointers, resource leaks in bytecode (like a bug detector)
                  Run with: mvn spotbugs:check -->
