@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 // Module 4: JUnit basics — Given/When/Then structure, lifecycle, edge cases
@@ -220,5 +221,100 @@ class CalculatorTest {
 
     // WHEN / THEN — assertThrows catches the exception
     assertThrows(ArithmeticException.class, () -> calc.divide(a, b));
+  }
+
+  // === Exercise 4.3 (slide 100): TDD with AI — tests written before implementation ===
+
+  @Nested
+  @DisplayName("factorial()")
+  class FactorialTest {
+
+    @Test
+    @DisplayName("factorial of zero is one")
+    void factorialOfZero() {
+      // GIVEN
+      int n = 0;
+
+      // WHEN
+      long result = calc.factorial(n);
+
+      // THEN — 0! = 1 by definition
+      assertEquals(1L, result);
+    }
+
+    @Test
+    @DisplayName("factorial of one is one")
+    void factorialOfOne() {
+      // GIVEN
+      int n = 1;
+
+      // WHEN
+      long result = calc.factorial(n);
+
+      // THEN
+      assertEquals(1L, result);
+    }
+
+    @Test
+    @DisplayName("factorial of five is 120")
+    void factorialOfFive() {
+      // GIVEN
+      int n = 5;
+
+      // WHEN
+      long result = calc.factorial(n);
+
+      // THEN — 5! = 5 × 4 × 3 × 2 × 1 = 120
+      assertEquals(120L, result);
+    }
+
+    @Test
+    @DisplayName("factorial of ten is 3628800")
+    void factorialOfTen() {
+      // GIVEN
+      int n = 10;
+
+      // WHEN
+      long result = calc.factorial(n);
+
+      // THEN
+      assertEquals(3_628_800L, result);
+    }
+
+    @Test
+    @DisplayName("factorial of twenty fits in long")
+    void factorialOfTwenty() {
+      // GIVEN — largest factorial that fits in long
+      int n = 20;
+
+      // WHEN
+      long result = calc.factorial(n);
+
+      // THEN
+      assertEquals(2_432_902_008_176_640_000L, result);
+    }
+
+    @Test
+    @DisplayName("negative input throws ArithmeticException")
+    void throwsOnNegativeInput() {
+      // GIVEN
+      int n = -1;
+
+      // WHEN / THEN
+      ArithmeticException ex = assertThrows(
+          ArithmeticException.class, () -> calc.factorial(n));
+      assertEquals("Factorial is not defined for negative numbers",
+          ex.getMessage());
+    }
+
+    @Test
+    @DisplayName("large negative input throws ArithmeticException")
+    void throwsOnLargeNegativeInput() {
+      // GIVEN
+      int n = -100;
+
+      // WHEN / THEN
+      assertThrows(ArithmeticException.class, () -> calc.factorial(n));
+    }
   }
 }
