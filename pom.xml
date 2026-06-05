@@ -30,6 +30,13 @@
             <artifactId>logback-classic</artifactId>
             <version>1.5.32</version> <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
         </dependency>
+        <!-- JUnit 5: testing framework -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>6.0.3</version> <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter -->
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
