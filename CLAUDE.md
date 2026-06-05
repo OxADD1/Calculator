@@ -1,5 +1,11 @@
 # CLAUDE.md — project root
 
+## Coding rules
+- Ask questions before implementing. If multiple interpretations exist, present them — do not pick silently.
+- State success criteria before writing code. Make them verifiable (tests, checks, examples).
+- Prefer the simplest solution that meets the requirement. No speculative abstractions.
+- Touch only what the request needs. No drive-by refactors. Match existing style.
+
 ## Project
 Java 21 Maven project: Calculator
 Arithmetic calculator with basic, scientific, JSON-based, and interactive REPL modes.
