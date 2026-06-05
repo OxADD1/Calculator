@@ -41,6 +41,25 @@ public class Calculator {
     return a / b;
   }
 
+  // Exercise 4.3 (slide 100): TDD with AI — implementation written after tests
+  /**
+   * Computes the factorial of a non-negative integer.
+   *
+   * @param n the non-negative integer
+   * @return n! as a long
+   * @throws ArithmeticException if n is negative
+   */
+  public long factorial(int n) {
+    if (n < 0) {
+      throw new ArithmeticException("Factorial is not defined for negative numbers");
+    }
+    long result = 1;
+    for (int i = 2; i <= n; i++) {
+      result *= i;
+    }
+    return result;
+  }
+
   // === Intentionally bad code for testing quality tools (Exercise 3.1) ===
   // Uncomment each block to test: which tool catches what? 
   // Cmd + / 
