@@ -42,7 +42,7 @@ public class InteractiveCalculator {
     printBanner();
 
     while (true) {
-      System.out.print("> ");
+      LOG.info("> ");
       if (!scanner.hasNextLine()) {
         break;
       }
@@ -65,7 +65,7 @@ public class InteractiveCalculator {
       }
       if (line.equalsIgnoreCase("clear")) {
         history.clear();
-        System.out.println("History cleared.");
+        LOG.info("History cleared.");
         continue;
       }
 
@@ -83,12 +83,12 @@ public class InteractiveCalculator {
       } else if (parts.length == 3) {
         evaluateBinary(parts[0], parts[1], parts[2], input);
       } else {
-        System.out.println("Invalid input. Type 'help' for usage.");
+        LOG.info("Invalid input. Type 'help' for usage.");
       }
     } catch (NumberFormatException e) {
-      System.out.println("Error: invalid number format.");
+      LOG.info("Error: invalid number format.");
     } catch (ArithmeticException e) {
-      System.out.println("Error: " + e.getMessage());
+      LOG.info("Error: {}", e.getMessage());
     }
   }
 
@@ -107,7 +107,7 @@ public class InteractiveCalculator {
         printAndRecord(input, String.valueOf(factResult));
         break;
       default:
-        System.out.println("Unknown command: " + command + ". Type 'help' for usage.");
+        LOG.info("Unknown command: {}. Type 'help' for usage.", command);
         break;
     }
   }
@@ -140,14 +140,14 @@ public class InteractiveCalculator {
         result = calc.power(a, b);
         break;
       default:
-        System.out.println("Unknown operator: " + operator + ". Type 'help' for usage.");
+        LOG.info("Unknown operator: {}. Type 'help' for usage.", operator);
         return;
     }
     printAndRecord(input, formatNumber(result));
   }
 
   private void printAndRecord(String expression, String result) {
-    System.out.println("  " + result);
+    LOG.info("  {}", result);
     history.record(expression, result);
   }
 
@@ -161,32 +161,32 @@ public class InteractiveCalculator {
   private void printHistory() {
     List<String> entries = history.getEntries();
     if (entries.isEmpty()) {
-      System.out.println("No calculations yet.");
+      LOG.info("No calculations yet.");
       return;
     }
-    System.out.println("--- History ---");
+    LOG.info("--- History ---");
     for (int i = 0; i < entries.size(); i++) {
-      System.out.println("  " + (i + 1) + ") " + entries.get(i));
+      LOG.info("  {}) {}", i + 1, entries.get(i));
     }
-    System.out.println("---------------");
+    LOG.info("---------------");
   }
 
   private void printBanner() {
-    System.out.println("========================================");
-    System.out.println("  Interactive Scientific Calculator");
-    System.out.println("  Type 'help' for commands, 'quit' to exit");
-    System.out.println("========================================");
+    LOG.info("========================================");
+    LOG.info("  Interactive Scientific Calculator");
+    LOG.info("  Type 'help' for commands, 'quit' to exit");
+    LOG.info("========================================");
   }
 
   private void printHelp() {
-    System.out.println("Usage:");
-    System.out.println("  Arithmetic:   5 + 3 | 10 - 4 | 6 * 7 | 10 / 2");
-    System.out.println("  Power:        2 ^ 8");
-    System.out.println("  Modulo:       10 % 3");
-    System.out.println("  Square root:  sqrt 16");
-    System.out.println("  Absolute:     abs -5");
-    System.out.println("  Factorial:    factorial 6");
-    System.out.println("  History:      history | clear");
-    System.out.println("  Exit:         quit | exit");
+    LOG.info("Usage:");
+    LOG.info("  Arithmetic:   5 + 3 | 10 - 4 | 6 * 7 | 10 / 2");
+    LOG.info("  Power:        2 ^ 8");
+    LOG.info("  Modulo:       10 % 3");
+    LOG.info("  Square root:  sqrt 16");
+    LOG.info("  Absolute:     abs -5");
+    LOG.info("  Factorial:    factorial 6");
+    LOG.info("  History:      history | clear");
+    LOG.info("  Exit:         quit | exit");
   }
 }
