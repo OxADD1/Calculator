@@ -76,6 +76,9 @@
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>3.28.0</version> <!-- https://search.maven.org/artifact/org.apache.maven.plugins/maven-pmd-plugin -->
                 <configuration>
+                    <rulesets>
+                        <ruleset>pmd-custom-ruleset.xml</ruleset>
+                    </rulesets>
                     <failOnViolation>true</failOnViolation>
                 </configuration>
             </plugin>
