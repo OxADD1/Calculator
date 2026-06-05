@@ -3,6 +3,7 @@ package com.example;
 // Constrained Re-Do (slide 83):
 // This test was AI-generated WITH CLAUDE.md and .claude/rules/ active.
 // Only fix needed: JUnit version was outdated (5.11.4 → 6.0.3).
+// Run with: mvn test
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
