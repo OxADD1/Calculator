@@ -108,27 +108,43 @@ class CalculatorTest {
     assertEquals(-5, result);
   }
 
-  // === multiply() ===
+  // === multiply() — Exercise 4.1: Written by hand (no AI) ===
+  // Covers: positive, negative, zero, large numbers (overflow)
+  // Note: decimal precision not applicable — multiply() uses int, not double
 
   @Test
   @DisplayName("multiply: two positive numbers")
   void multiplyTwoPositiveNumbers() {
     // GIVEN
-    int a = 6;
-    int b = 7;
+    int a = 3;
+    int b = 4;
 
     // WHEN
     int result = calc.multiply(a, b);
 
     // THEN
-    assertEquals(42, result);
+    assertEquals(12, result);
+  }
+
+  @Test
+  @DisplayName("multiply: negative times positive")
+  void multiplyNegativeTimesPositive() {
+    // GIVEN
+    int a = -3;
+    int b = 5;
+
+    // WHEN
+    int result = calc.multiply(a, b);
+
+    // THEN
+    assertEquals(-15, result);
   }
 
   @Test
   @DisplayName("multiply: by zero returns zero")
   void multiplyByZero() {
     // GIVEN
-    int a = 99;
+    int a = 100;
 
     // WHEN
     int result = calc.multiply(a, 0);
@@ -138,17 +154,31 @@ class CalculatorTest {
   }
 
   @Test
+  @DisplayName("multiply: large numbers cause overflow")
+  void multiplyOverflow() {
+    // GIVEN — MAX_VALUE * 2 overflows in Java
+    int a = Integer.MAX_VALUE;
+    int b = 2;
+
+    // WHEN
+    int result = calc.multiply(a, b);
+
+    // THEN — overflow wraps around: 2147483647 * 2 = -2
+    assertEquals(-2, result);
+  }
+
+  @Test
   @DisplayName("multiply: negative times negative is positive")
   void multiplyNegativeTimesNegative() {
     // GIVEN
-    int a = -3;
-    int b = -4;
+    int a = -6;
+    int b = -7;
 
     // WHEN
     int result = calc.multiply(a, b);
 
     // THEN
-    assertEquals(12, result);
+    assertEquals(42, result);
   }
 
   // === divide() ===

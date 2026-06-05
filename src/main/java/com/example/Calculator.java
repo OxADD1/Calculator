@@ -31,6 +31,8 @@ public class Calculator {
 
   /** Multiplies two numbers. */
   public int multiply(int a, int b) {
+    // Exercise 4.1: introduced bug (return a + b) — all 5 tests caught it
+    // Run: mvn test
     return a * b;
   }
 
