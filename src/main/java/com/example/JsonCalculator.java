@@ -20,8 +20,7 @@ public class JsonCalculator {
     Gson gson = new Gson();
     Reader reader = new InputStreamReader(
         JsonCalculator.class.getResourceAsStream("/calculation.json"),
-        StandardCharsets.UTF_8
-    );
+        StandardCharsets.UTF_8);
 
     Operation[] operations = gson.fromJson(reader, Operation[].class);
     Calculator calc = new Calculator();
