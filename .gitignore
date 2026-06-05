@@ -1,3 +1,14 @@
 target/
 *.class
 .DS_Store
+
+# IDE config
+.vscode/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# Log files
+*.log
