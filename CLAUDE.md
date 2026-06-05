@@ -5,6 +5,8 @@
 - State success criteria before writing code. Make them verifiable (tests, checks, examples).
 - Prefer the simplest solution that meets the requirement. No speculative abstractions.
 - Touch only what the request needs. No drive-by refactors. Match existing style.
+- KISS (Keep It Simple, Stupid) — don't overcomplicate what can be straightforward.
+- YAGNI (You Aren't Gonna Need It) — don't build features until they're actually required.
 
 ## Project
 Java 21 Maven project: Calculator
