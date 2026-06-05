@@ -61,24 +61,24 @@ public class Calculator {
   }
 
   // === Intentionally bad code for testing quality tools (Exercise 3.1) ===
-  // Uncomment each block to test: which tool catches what? 
-  // Cmd + / 
+  // Uncomment each block to test: which tool catches what?
+  // Cmd + /
 
   // CheckStyle: bad naming + formatting
   // public void x(){ }
 
   // PMD: empty catch block
   // public int safeParse(String input) {
-  //   try {
-  //     return Integer.parseInt(input);
-  //   } catch (NumberFormatException e) {
-  //   }
-  //   return 0;
+  // try {
+  // return Integer.parseInt(input);
+  // } catch (NumberFormatException e) {
+  // }
+  // return 0;
   // }
 
   // SpotBugs: String comparison with == instead of .equals()
   // public boolean isAdmin(String username) {
-  //   return username == "admin";
+  // return username == "admin";
   // }
 
   // === Intentionally bad code for bug hunting (Exercise 3.2) ===
@@ -95,8 +95,7 @@ public class Calculator {
   // Bug 2 fixed: try-with-resources closes reader automatically
   /** Reads first line from a file. */
   public String readFile(String path) throws Exception {
-    try (java.io.FileReader reader =
-        new java.io.FileReader(path, java.nio.charset.StandardCharsets.UTF_8)) {
+    try (java.io.FileReader reader = new java.io.FileReader(path, java.nio.charset.StandardCharsets.UTF_8)) {
       return reader.toString();
     }
   }

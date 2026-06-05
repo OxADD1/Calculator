@@ -291,8 +291,10 @@ class ScientificCalculatorTest {
   }
 
   // === Exercise 4.2: Weak tests identified during critical review ===
-  // The following "inherited methods" tests are WEAK — they test Java's inheritance
-  // mechanism, not our code. add() and divide() are already tested in CalculatorTest.
+  // The following "inherited methods" tests are WEAK — they test Java's
+  // inheritance
+  // mechanism, not our code. add() and divide() are already tested in
+  // CalculatorTest.
   // These tests would pass even if ScientificCalculator had no logic at all.
 
   @Nested

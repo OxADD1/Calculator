@@ -223,7 +223,8 @@ class CalculatorTest {
     assertThrows(ArithmeticException.class, () -> calc.divide(a, b));
   }
 
-  // === Exercise 4.3 (slide 100): TDD with AI — tests written before implementation ===
+  // === Exercise 4.3 (slide 100): TDD with AI — tests written before
+  // implementation ===
 
   @Nested
   @DisplayName("factorial()")

@@ -14,7 +14,8 @@ import java.util.Map;
 /**
  * Provides statistical calculations on numeric datasets.
  *
- * <p>Supports mean, median, mode, and standard deviation computations
+ * <p>
+ * Supports mean, median, mode, and standard deviation computations
  * on lists of numeric values.
  */
 public class StatisticsCalculator {
@@ -38,7 +39,8 @@ public class StatisticsCalculator {
   /**
    * Calculates the median of a dataset.
    *
-   * <p>For an odd-sized list, returns the middle element.
+   * <p>
+   * For an odd-sized list, returns the middle element.
    * For an even-sized list, returns the average of the two middle elements.
    *
    * @param values the dataset
@@ -59,7 +61,8 @@ public class StatisticsCalculator {
   /**
    * Finds the mode(s) of a dataset.
    *
-   * <p>Returns all values that appear with the highest frequency.
+   * <p>
+   * Returns all values that appear with the highest frequency.
    * If all values appear equally often, all values are modes.
    *
    * @param values the dataset
