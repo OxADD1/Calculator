@@ -6,10 +6,6 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/session-guard.sh"
-          },
-          {
-            "type": "command",
             "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/setup-env.sh"
           }
         ]
@@ -84,10 +80,6 @@
           {
             "type": "command",
             "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/notify-complete.sh"
-          },
-          {
-            "type": "command",
-            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/session-cleanup.sh"
           }
         ]
       }
