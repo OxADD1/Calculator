@@ -312,3 +312,4 @@ buildNumber.properties
 !**/src/test/**/build/
 
 # Annotation processors
+*.txt
