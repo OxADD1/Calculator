@@ -16,8 +16,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Interactive REPL calculator with scientific operations and history.
  *
- * <p>
- * Supported expressions:
+ * <p>Supported expressions:
  * <ul>
  * <li>Binary: {@code 5 + 3}, {@code 10 - 4}, {@code 6 * 7}, {@code 10 / 2},
  * {@code 10 % 3}, {@code 2 ^ 8}</li>

@@ -1,10 +1,10 @@
 ---
-paths: "src/**/*.java"
+paths: ["**/*.java"]
 ---
 
-- Google Java Style Guide (2-space indent)
-- SLF4J + LoggerFactory, never System.out
-- Exception handling: catch specific, log with context
-- JUnit 5 with @DisplayName on every test
-- All public methods must have Javadoc
-- No wildcard imports
+# Java Conventions
+
+- Follow project's checkstyle/PMD configuration
+- Use `final` for immutable variables
+- Prefer records for DTOs (Java 16+)
+- Handle checked exceptions explicitly — no empty catch blocks

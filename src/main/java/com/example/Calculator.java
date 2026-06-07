@@ -95,7 +95,8 @@ public class Calculator {
   // Bug 2 fixed: try-with-resources closes reader automatically
   /** Reads first line from a file. */
   public String readFile(String path) throws Exception {
-    try (java.io.FileReader reader = new java.io.FileReader(path, java.nio.charset.StandardCharsets.UTF_8)) {
+    try (java.io.FileReader reader =
+        new java.io.FileReader(path, java.nio.charset.StandardCharsets.UTF_8)) {
       return reader.toString();
     }
   }
