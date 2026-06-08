@@ -109,6 +109,47 @@ class CalculatorTest {
     assertEquals(-5, result);
   }
 
+  @Test
+  @DisplayName("subtract: zero does not change value")
+  void subtractZero() {
+    // GIVEN
+    int a = 5;
+
+    // WHEN
+    int result = calc.subtract(a, 0);
+
+    // THEN
+    assertEquals(5, result);
+  }
+
+  @Test
+  @DisplayName("subtract: negative minus negative")
+  void subtractNegativeMinusNegative() {
+    // GIVEN
+    int a = -3;
+    int b = -7;
+
+    // WHEN
+    int result = calc.subtract(a, b);
+
+    // THEN — (-3) - (-7) = 4
+    assertEquals(4, result);
+  }
+
+  @Test
+  @DisplayName("subtract: integer overflow wraps around")
+  void subtractOverflow() {
+    // GIVEN — MIN_VALUE - 1 wraps to MAX_VALUE in Java
+    int a = Integer.MIN_VALUE;
+    int b = 1;
+
+    // WHEN
+    int result = calc.subtract(a, b);
+
+    // THEN
+    assertEquals(Integer.MAX_VALUE, result);
+  }
+
   // === multiply() — Exercise 4.1: Written by hand (no AI) ===
   // Covers: positive, negative, zero, large numbers (overflow)
   // Note: decimal precision not applicable — multiply() uses int, not double
