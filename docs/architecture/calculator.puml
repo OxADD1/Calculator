@@ -1,0 +1,75 @@
+' Render this diagram online: https://www.plantuml.com/plantuml/uml/
+' Copy the content of this file and paste it there to see the diagram.
+
+@startuml Calculator Architecture
+
+title Calculator — Class Diagram
+
+package "com.example" {
+
+    class App {
+        + main(String[] args)
+    }
+
+    class Calculator {
+        + add(double, double) : double
+        + subtract(double, double) : double
+        + multiply(double, double) : double
+        + divide(double, double) : double
+        + factorial(int) : long
+        + describe() : String
+        + readFile(String) : String
+    }
+
+    class ScientificCalculator {
+        + power(double, double) : double
+        + sqrt(double) : double
+        + modulo(double, double) : double
+        + abs(double) : double
+        + factorial(int) : long
+        + percentage(double, double) : double
+    }
+
+    class InteractiveCalculator {
+        - calculator : ScientificCalculator
+        - history : CalculationHistory
+        + start()
+    }
+
+    class CalculationHistory {
+        - entries : List<String>
+        + addEntry(String)
+        + getEntries() : List<String>
+        + clear()
+        + size() : int
+    }
+
+    class JsonCalculator {
+        + main(String[] args)
+    }
+
+    class Operation {
+        - operation : String
+        - operandA : int
+        - operandB : int
+    }
+
+    class StatisticsCalculator {
+        + mean(List<Double>) : double
+        + median(List<Double>) : double
+        + mode(List<Double>) : List<Double>
+        + standardDeviation(List<Double>) : double
+    }
+
+    ' Inheritance
+    ScientificCalculator --|> Calculator
+
+    ' Dependencies
+    App --> Calculator : uses
+    InteractiveCalculator --> ScientificCalculator : uses
+    InteractiveCalculator --> CalculationHistory : tracks history
+    JsonCalculator --> Calculator : uses
+    JsonCalculator --> Operation : reads from JSON
+}
+
+@enduml
