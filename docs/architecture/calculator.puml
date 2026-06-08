@@ -3,6 +3,8 @@
 
 @startuml Calculator Architecture
 
+skinparam classFontSize 14
+left to right direction
 title Calculator — Class Diagram
 
 package "com.example" {
